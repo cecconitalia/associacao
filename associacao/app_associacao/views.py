@@ -7,6 +7,9 @@ def home(request):
 def about(request):
     return render(request,'sobre/about.html')
 
+def contato(request):
+    return render(request,'contato/contato.html')
+
 def usuariocad(request):
     return render(request,'cad/home.html')
 
