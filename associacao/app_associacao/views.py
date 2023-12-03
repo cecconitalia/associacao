@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Usuario
+from .models import Lead
 
 def home(request):
     return render(request,'index.html')
@@ -24,3 +25,19 @@ def usuarios(request):
     }
 
     return render(request,'usuarios/usuarios.html',usuarios)
+
+def leads(request):
+    novo_lead = Lead()
+    novo_lead.nome = request.POST.get('nome')
+    novo_lead.email = request.POST.get('email')
+    novo_lead.telefone = request.POST.get('telefone')
+    novo_lead.assunto = request.POST.get('assunto')
+
+
+    novo_lead.save()
+
+    leads = {
+        'leads': Lead.objects.all()
+    }
+
+    return render(request,'leads/leads.html',leads)

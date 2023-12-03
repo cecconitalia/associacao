@@ -11,4 +11,4 @@ class Lead(models.Model):
     nome = models.TextField(max_length=255)
     email = models.EmailField()    
     telefone = models.IntegerField()
-    assunto = models.TextField()
+    assunto = models.TextField(max_length=1000)

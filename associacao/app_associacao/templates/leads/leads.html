@@ -1,0 +1,4 @@
+<button><a href="/cad">Novo cadastro</a></button>
+{% for lead in leads %}
+{{lead.nome}}, {{lead.email}}, {{lead.telefone}}, {{lead.assunto}}
+{% endfor %}
